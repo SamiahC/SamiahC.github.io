@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<head>
+<script src="/assets/jquery.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Bungee|Concert+One|Work+Sans" rel="stylesheet">
+<style>
+body {
+  font-family: 'Concert One', cursive;
+  margin: 0 auto;
+  max-width: 600px;
+  background: rgba(250,245,230,1);
+}
+div {
+  height: 300px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+  font-family: 'Work Sans', sans-serif;
+}
+h1 {
+  font-family: 'Bungee', cursive;
+  text-align: center;
+  font-size: 75px;
+  color: rgba(95,0,50,1);
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: rgba(95,0,50,1);
+  margin: 0px 0 70px 0;
+}
+    ul {
+      padding: 10px;
+      background: rgba(10,80,100,0.5);
+      text-align: center;
+    }
+    li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+    } 
+
+p {
+  color: rgba(255,255,255,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(255,192,203,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+    <ul>
+      <li><button onclick=appetizers()>Appetizers</a></li>
+      <li><button onclick=entrees()>Entrees</a></li>
+      <li><button onclick=desserts()>Desserts</a></li>
+    </ul>
+    
+<h1>Y u m m y b o i</h1>
+
+<h2>It's-a Italiano, Non C'è Di Che</h2>
+
+<div id="yummy"></div>
+
+
+
+
+
+
+<script>
+appetizersImages = [
+        'url("https://prods3.imgix.net/images/articles/2015_03/Web-Article-Ashely-Christensen-Poole_s-Diner-Raleigh-North-Carolina-Southern-Food-Month-Brunch-Broccolini-Parmesan-Recipes-Cooking.jpg?auto=format%2Ccompress&ixjsv=2.2.3&w=670")',
+				'url("https://www.gustissimo.it/articoli/ricette/bruschette-crostini/bruschette-alla-pizzaiola.jpg")',
+				'url("https://www.storyofakitchen.com/images/Vegetable/tomato-tart.jpg")',
+]
+
+entreesImages = [
+        'url("https://images-gmi-pmc.edge-generalmills.com/2ba588ee-c834-4f9b-8b6b-400f9b3a91b5.jpg")',
+        'url("https://hips.hearstapps.com/vidthumb/images/180820-bookazine-delish-01280-1536610916.jpg?crop=1.00xw:0.752xh;0,0.250xh&resize=640:*")',
+        'url("https://www.gimmesomeoven.com/wp-content/uploads/2012/09/mushroom-risotto-1.jpg")',        
+]
+
+dessertsImages = [
+      'url("https://www.askchefdennis.com/wp-content/uploads/2011/10/Strawberry-gelato-5-1024x683.jpg")',
+      'url("https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/2/RX-FNM_030111-Sugar-Fix-005_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371597326801.jpeg")',
+      'url("https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/53/2016/08/how-to-make-panna-cotta.jpg")',
+]
+
+appetizersDivs = [
+    '<div class="item"onclick=this.classList.toggle("show-description")><p>Charred Broccolini with White Anchovy Vinaigrette <span class="price">$21.50</span><br /><small>Award_winning Chef Ashley Christensen\'\s accompanying anchovy vinaigrette is reminiscent of Caesar dressing, giving the bitter green vegetables a punch of salty, creamy flavor.</small></p></div>',
+    '<div class="item"><p>Bruschetta Pizzaiola<span class="price">$20 per person</span><br /><small>This bruschetta pizzaiola recipe combines the classic bruschetta recipe with that of margherita pizza\'\s. </small></p></div>',
+    '<div class="item"><p>Roasted Tomato Tart <span class="price">$26</span><br /><small>This savory treat showcases plum tomatoes in their prime with such simple grace that you\'\ll forget about sweets for the moment.</small></p></div>',
+]
+
+entreesDivs = [
+   '<div class="item"onclick=this.classList.toggle("show-description")><p>Fettucini Alfredo <span class="price">$40.95</span><br /><small>A classic creamy parmigiana sauce made in YummyBoi’s style with a touch of garlic and sliced chicken cutlets.</small></p></div>',
+   '<div class="item"><p>Lasagna<span class="price">$36.75</span><br /><small>Homemade lasagna recipe full of pasta, ricotta, a homemade meat sauce, and tons of cheese.</small></p></div>',
+   '<div class="item"><p>Risotto w/ mushrooms<span class="price">$38.50</span><br /><small>Creamy, delicious parmesan risotto with a generous helping of sauteed mushrooms and garnish.</small></p></div>',
+]
+
+dessertsDivs = [
+   '<div class="item"onclick=this.classList.toggle("show-description")><p>Gelato <span class="price">$22.85</span><br /><small>Uses only the highest quality milk, organic eggs, and strictly seasonal ingredients (lemons from Amalfi, hazelnuts from Piedmont) for intense and authentic flavors.</small></p></div>',
+   '<div class="item"><p>Tiramisu<span class="price">$23.65</span><br /><small>Mascarpone custard layered with whipped cream and rum and coffee soaked ladyfingers.</small></p></div>',
+   '<div class="item"><p>Panna cotta<span class="price">$24.45</span><br /><small>A soft and deliciously sweet dessert that you’ll want to make time and time, again served with a variety of fruits.</small></p></div>',
+]   
+
+
+
+function appetizers() {
+	//alert("yummy")
+	  foodie = document.getElementById("yummy")
+	  foodie.innerHTML = ''
+	  foodie.innerHTML += appetizersDivs[0]
+    foodie.innerHTML += appetizersDivs[1]
+    foodie.innerHTML += appetizersDivs[2]
+	  items = document.getElementsByClassName("item")
+    for (i=0; i<3; i=i+1) {
+		    items[i].style.background = appetizersImages[i]
+		    items[i].style.backgroundSize = '100% 100%'
+	  }
+} 
+
+function entrees() {
+	//alert("yay")
+	  foodie = document.getElementById("yummy")
+	  foodie.innerHTML = ''
+	  foodie.innerHTML += entreesDivs[0]
+    foodie.innerHTML += entreesDivs[1]
+    foodie.innerHTML += entreesDivs[2]
+	  items = document.getElementsByClassName("item")
+    for (i=0; i<3; i=i+1) {
+		    items[i].style.background = entreesImages[i]
+		    items[i].style.backgroundSize = '100% 100%'
+    }
+}    
+
+function desserts() {
+	//alert("chomp chomp chomp")
+		foodie = document.getElementById("yummy")
+	  foodie.innerHTML = ''
+	  foodie.innerHTML += dessertsDivs[0]
+    foodie.innerHTML += dessertsDivs[1]
+    foodie.innerHTML += dessertsDivs[2]
+		items = document.getElementsByClassName("item")
+    for (i=0; i<3; i=i+1) {
+		    items[i].style.background = dessertsImages[i]
+		    items[i].style.backgroundSize = '100% 100%'
+    }
+}  
+  
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+</script>
+
+</body>
