@@ -39,7 +39,6 @@ h2 {
       display: inline;
       padding: 0px 10px 0px 10px;
     } 
-
 p {
   color: rgba(255,255,255,1);
   background: black;
@@ -57,20 +56,15 @@ p {
   -webkit-transition: height .5s;
   -moz-transition: height .5s;
 }
-
 small {
   opacity: 0;
 }
-
 .show-description p {
   height: 150px;
 }
-
 .show-description small {
   opacity: 1;
 }
-
-
 .price {
   float: right;
 }
@@ -95,7 +89,6 @@ small {
     font-size: 16px;
   }
 }
-
 </style>
 
 </head>
@@ -106,9 +99,10 @@ small {
       <li><button onclick=appetizers()>Appetizers</a></li>
       <li><button onclick=entrees()>Entrees</a></li>
       <li><button onclick=desserts()>Desserts</a></li>
+	<li><button onclick=chefs()>Chefs</a></li>
     </ul>
     
-<h1>Y u m m y b o i</h1>
+<h1>Y u m m y b o i  </h1>
 
 <h2>It's-a Italiano, Non C'è Di Che</h2>
 
@@ -124,40 +118,56 @@ appetizersImages = [
         'url("https://prods3.imgix.net/images/articles/2015_03/Web-Article-Ashely-Christensen-Poole_s-Diner-Raleigh-North-Carolina-Southern-Food-Month-Brunch-Broccolini-Parmesan-Recipes-Cooking.jpg?auto=format%2Ccompress&ixjsv=2.2.3&w=670")',
 				'url("https://www.gustissimo.it/articoli/ricette/bruschette-crostini/bruschette-alla-pizzaiola.jpg")',
 				'url("https://www.storyofakitchen.com/images/Vegetable/tomato-tart.jpg")',
-]
+				'url("https://cook.fnr.sndimg.com/content/dam/images/cook/fullset/2016/2/11/0/CCTIA212H_Chicken-Parmesan-Sticks_s4x3.jpg.rend.hgtvcom.616.462.suffix/1455214059354.jpeg")',
+				
 
+]
 entreesImages = [
         'url("https://images-gmi-pmc.edge-generalmills.com/2ba588ee-c834-4f9b-8b6b-400f9b3a91b5.jpg")',
         'url("https://hips.hearstapps.com/vidthumb/images/180820-bookazine-delish-01280-1536610916.jpg?crop=1.00xw:0.752xh;0,0.250xh&resize=640:*")',
-        'url("https://www.gimmesomeoven.com/wp-content/uploads/2012/09/mushroom-risotto-1.jpg")',        
+        'url("https://www.gimmesomeoven.com/wp-content/uploads/2012/09/mushroom-risotto-1.jpg")',  
+		'url("https://cdn-image.foodandwine.com/sites/default/files/styles/medium_2x/public/1458657042/veal-marsala-XL-RECIPE0316.jpg?itok=acv7jt2O")', 
+		'url("https://food.fnr.sndimg.com/content/dam/images/food/fullset/2004/4/21/1/ei1c01_shrimp_fra_diavolo1.jpg.rend.hgtvcom.616.462.suffix/1485535855669.jpeg")',  
 ]
-
 dessertsImages = [
       'url("https://www.askchefdennis.com/wp-content/uploads/2011/10/Strawberry-gelato-5-1024x683.jpg")',
       'url("https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/2/RX-FNM_030111-Sugar-Fix-005_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371597326801.jpeg")',
       'url("https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/53/2016/08/how-to-make-panna-cotta.jpg")',
+	  'url("https://www.nonnabox.com/wp-content/uploads/recipe-zeppole-di-san-giuseppe.jpg")',
+	 
 ]
+chefsImages = [
+	'url("https://bento.cdn.pbs.org/hostedbento-prod/blog/20190202_101117_390337_lidia-1280x720.png")',
+	'url("https://storage.googleapis.com/c2mtl-media-bucket/2016/02/Massimo_Bottura.jpg")',
+	'url("https://www.bravotv.com/sites/bravo/files/field_blog_image/2016/01/dish-012216-fabio.jpg")',
+]	
+
 
 appetizersDivs = [
     '<div class="item" onclick=this.classList.toggle("show-description")><p>Charred Broccolini with White Anchovy Vinaigrette <span class="price">$21.50</span><br /><small>Award_winning Chef Ashley Christensen\'\s accompanying anchovy vinaigrette is reminiscent of Caesar dressing, giving the bitter green vegetables a punch of salty, creamy flavor.</small></p></div>',
     '<div class="item" onclick=this.classList.toggle("show-description")><p>Bruschetta Pizzaiola<span class="price">$20 per person</span><br /><small>This bruschetta pizzaiola recipe combines the classic bruschetta recipe with that of margherita pizza\'\s. </small></p></div>',
     '<div class="item" onclick=this.classList.toggle("show-description")><p>Roasted Tomato Tart <span class="price">$26</span><br /><small>This savory treat showcases plum tomatoes in their prime with such simple grace that you\'\ll forget about sweets for the moment.</small></p></div>',
+	'<div class="item" onclick=this.classList.toggle("show-description")><p>Chicken Parmesan Sticks <span class="price">$22.95</span><br /><small>Coated in crisp panko crumbs & parmesan cheese, these chicken tenderloins are a great way to start.</small></p></div>',
 ]
-
 entreesDivs = [
    '<div class="item" onclick=this.classList.toggle("show-description")><p>Fettucini Alfredo <span class="price">$40.95</span><br /><small>A classic creamy parmigiana sauce made in YummyBoi’s style with a touch of garlic and sliced chicken cutlets.</small></p></div>',
    '<div class="item" onclick=this.classList.toggle("show-description")><p>Lasagna<span class="price">$36.75</span><br /><small>Homemade lasagna recipe full of pasta, ricotta, a homemade meat sauce, and tons of cheese.</small></p></div>',
    '<div class="item" onclick=this.classList.toggle("show-description")><p>Risotto w/ mushrooms<span class="price">$38.50</span><br /><small>Creamy, delicious parmesan risotto with a generous helping of sauteed mushrooms and garnish.</small></p></div>',
+	'<div class="item" onclick=this.classList.toggle("show-description")><p>Veal Marsala<span class="price">$42.50</span><br /><small>Marsala wine and a little lemon juice add excellent flavor to this veal and mushrooms.</small></p></div>',
+	'<div class="item" onclick=this.classList.toggle("show-description")><p> Shrimp Fra Diavolo<span class="price">$48.55</span><br /><small>Medium-size shrimp in this garlicky, spicy classic.</small></p></div>',
 ]
-
 dessertsDivs = [
    '<div class="item" onclick=this.classList.toggle("show-description")><p>Gelato <span class="price">$22.85</span><br /><small>Uses only the highest quality milk, organic eggs, and strictly seasonal ingredients (lemons from Amalfi, hazelnuts from Piedmont) for intense and authentic flavors.</small></p></div>',
    '<div class="item" onclick=this.classList.toggle("show-description")><p>Tiramisu<span class="price">$23.65</span><br /><small>Mascarpone custard layered with whipped cream and rum and coffee soaked ladyfingers.</small></p></div>',
-   '<div class="item" onclick=this.classList.toggle("show-description")><p>Panna cotta<span class="price">$24.45</span><br /><small>A soft and deliciously sweet dessert that you’ll want to eat time and time, again served with a variety of fruits.</small></p></div>',
+   '<div class="item" onclick=this.classList.toggle("show-description")><p>Panna cotta<span class="price">$24.45</span><br /><small>A soft and deliciously sweet dessert that you’ll want to eat time and time again, served with a variety of fruits.</small></p></div>',
+	'<div class="item" onclick=this.classList.toggle("show-description")><p>Zeppole<span class="price">$25.99</span><br /><small>Typical Italian pastry consisting of a deep-fried dough ball. Basically, filled doughnuts you’ll fall in love with at first bite.</small></p></div>',
+]
+chefsDivs = [	
+	'<div class="item" onclick=this.classList.toggle("show-description")><p>Lidia Bastianich <br /><small>Lidia Giuliana Matticchio Bastianich is an Italian-Croatian celebrity chef, television host, author, and restaurateur.</small></p></div>',
+	'<div class="item" onclick=this.classList.toggle("show-description")><p>Massimo Bottura<br /><small>Massimo Bottura is an Italian restaurateur and the chef patron of Osteria Francescana, a three-Michelin-star restaurant based in Modena, Italy which has been listed in the top 5 at The World\'\s 50 Best Restaurants Awards since 2010 and received top ratings from ESPRESSO, Gambero Rosso and the Touring Club guides</small></p></div>',
+	'<div class="item" onclick=this.classList.toggle("show-description")><p>Fabio Viviani <br /><small>Fabio Viviani is a chef, restaurateur, and writer of cookery books who has appeared on reality television. He also sells a range of wines.</small></p></div>',	
+
 ]   
-
-
-
 function appetizers() {
 	//alert("yummy")
 	  foodie = document.getElementById("yummy")
@@ -165,13 +175,13 @@ function appetizers() {
 	  foodie.innerHTML += appetizersDivs[0]
     foodie.innerHTML += appetizersDivs[1]
     foodie.innerHTML += appetizersDivs[2]
+	foodie.innerHTML += appetizersDivs[3]
 	  items = document.getElementsByClassName("item")
-    for (i=0; i<3; i=i+1) {
+    for (i=0; i<4; i=i+1) {
 		    items[i].style.background = appetizersImages[i]
 		    items[i].style.backgroundSize = '100% 100%'
 	  }
 } 
-
 function entrees() {
 	//alert("yay")
 	  foodie = document.getElementById("yummy")
@@ -179,13 +189,14 @@ function entrees() {
 	  foodie.innerHTML += entreesDivs[0]
     foodie.innerHTML += entreesDivs[1]
     foodie.innerHTML += entreesDivs[2]
+	foodie.innerHTML += entreesDivs[3]
+	foodie.innerHTML += entreesDivs[4]
 	  items = document.getElementsByClassName("item")
-    for (i=0; i<3; i=i+1) {
+    for (i=0; i<5; i=i+1) {
 		    items[i].style.background = entreesImages[i]
 		    items[i].style.backgroundSize = '100% 100%'
     }
 }    
-
 function desserts() {
 	//alert("chomp chomp chomp")
 		foodie = document.getElementById("yummy")
@@ -193,12 +204,27 @@ function desserts() {
 	  foodie.innerHTML += dessertsDivs[0]
     foodie.innerHTML += dessertsDivs[1]
     foodie.innerHTML += dessertsDivs[2]
+	foodie.innerHTML += dessertsDivs[3]
 		items = document.getElementsByClassName("item")
-    for (i=0; i<3; i=i+1) {
+    for (i=0; i<4; i=i+1) {
 		    items[i].style.background = dessertsImages[i]
 		    items[i].style.backgroundSize = '100% 100%'
     }
 }  
+function chefs() {
+	//alert("whoop")
+	  foodie = document.getElementById("yummy")
+	  foodie.innerHTML = ''
+	  foodie.innerHTML += chefsDivs[0]
+    foodie.innerHTML += chefsDivs[1]
+    foodie.innerHTML += chefsDivs[2]
+	  items = document.getElementsByClassName("item")
+    for (i=0; i<3; i=i+1) {
+		    items[i].style.background = chefsImages[i]
+		    items[i].style.backgroundSize = '100% 100%'
+    }
+}    
+
   
   $('div').on('click', function() {
       $(this).toggleClass('show-description');
