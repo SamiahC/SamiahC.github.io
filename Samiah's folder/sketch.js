@@ -55,6 +55,7 @@ function draw() {
   circle(x*s, y, 50*s);
   fill(176,224,230);
   
+  if (touches.length == 0)   {
   if (keyIsDown(LEFT_ARROW)) {
     x = x - 5
   }
@@ -67,6 +68,14 @@ function draw() {
   if (keyIsDown(UP_ARROW)) {
     y = y - 3
   }
+  }
+  else { 
+	x = touches[0].x
+	y = touches[0].y
+}
+	  
+	  
+	  
   
 for(i=0; i<enemies; i=i+1) {  
       circle(a[i]*s, b[i], 10*s);
