@@ -1,0 +1,5 @@
+let homie
+
+function setup() {
+homie = createImg(“UnconsciousCompleteHuman-max-1mb.gif”) 
+}
