@@ -1,4 +1,6 @@
 let homie
+let nibbs = [ ]
+
 
 function setup() {
 homie = createImg(“UnconsciousCompleteHuman-max-1mb.gif”) 
