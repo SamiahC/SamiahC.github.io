@@ -4,7 +4,7 @@ html, body {
   position: fixed; 
 	overflow: hidden; 
   overscroll-behavior: none;
-#____________, #___________ input, button {
+#names, #names input, button {
 	font-size: 120%;
 }
 
