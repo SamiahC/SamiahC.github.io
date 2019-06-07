@@ -52,6 +52,10 @@ function draw() {
   if (time > 0) {
 
   background(238,130,238);
+  
+  homie.size(2*50*s, 2*50*s)
+  homie.position((527 - homie.width/2)*s, 100 - homie.height/2)
+
   circle(x*s, y, 50*s);
   fill(176,224,230);
   
