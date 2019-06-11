@@ -83,7 +83,8 @@ function draw() {
 	  
 	  
 	  
-  
+nibbs[i].size(2*10*s, 2*10*s)
+nibbs[i].position((377 - nibbs[i].width/2)*s, 400 - nibbs[i].height/2)  
 for(i=0; i<enemies; i=i+1) {  
       circle(a[i]*s, b[i], 10*s);
       fill(148,0,211);
