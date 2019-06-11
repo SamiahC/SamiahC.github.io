@@ -44,9 +44,7 @@ function setup() {
   speed=5
   time=10
 
-  (i=0; i<1; i=i+1) {
-	nibbs.push(createImg(“nibbs.gif”))
-}
+
 
 }      
 
