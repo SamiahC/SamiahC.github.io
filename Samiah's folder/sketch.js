@@ -150,7 +150,7 @@ for(i=0; i<enemies; i=i+1) {
   
 }
   else {
-    names2.innerHTML = "Name? <input id='end'><button onclick='restart()'>Restart</button><button onclick=generate_alltime_leaderboard()>"
+    names.innerHTML = "Name? <input id='end'><button onclick='restart()'>Restart</button><button onclick=generate_alltime_leaderboard()>"
 	noLoop()
 
 
