@@ -8,6 +8,7 @@ let level
 let enemies
 let speed
 let time
+let homie
  
 
 // Your web app's Firebase configuration
@@ -43,6 +44,8 @@ function setup() {
   enemies=1
   speed=5
   time=10
+  	
+	
 
 
 
