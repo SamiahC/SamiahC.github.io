@@ -9,6 +9,7 @@ let enemies
 let speed
 let time
 let homie
+let nibbs = []
  
 
 // Your web app's Firebase configuration
